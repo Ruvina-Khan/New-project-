@@ -1,0 +1,182 @@
+{% extends"student_base.html" %}
+{% block title %} Homepage {% endblock %}
+{% block body %}
+
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn1 {
+  background-color: #292c29;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn1:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 1200px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 1200px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/final_pay/{{cou}}", method="POST">
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="xyz" required>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="xyz@example.com" required>
+            <br>
+            <br>
+            <p>AMOUNT<span class="price" style="color:black"><b>={{amount_}}</b></span></p>
+            <p>APPLIED COUPON<span class="price" style="color:black"><b>={{cou}}</b></span></p>
+          </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="CARD_NO">Name on Card</label>
+            <input type="text" id="Name" name="Name" placeholder="xyz" required>
+            <div class="form-group">
+              <label for="exampleInputPassword1"> CARD NUMBER</label>
+              <input type="text" name="CARD_NO" class="CARD" id="CODE" placeholder="...." required>
+            </div>
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="month" required> 
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="year" required>
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="cvv" required>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <input type="submit" value="Continue to checkout" class="btn1" required>
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+    
+      <hr>
+      
+      <p>Total <span class="price" style="color:black"><b>{{total_}}</b></span></p>
+      
+      <hr>
+      <p>Coupon Applied <span class="price" style="color:black"><b>{{cou}}</b></span></p>
+      <br>
+      
+      <p>Discount<span class="price" style="color:black"><b>{{dis}}</b></span></p>
+      
+      <hr>
+      
+      <p>Amount <span class="price" style="color:black"><b>{{amount_}}</b></span></p>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

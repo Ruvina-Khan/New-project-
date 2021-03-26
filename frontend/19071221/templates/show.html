@@ -1,0 +1,57 @@
+{% extends"student_base.html" %}
+{% block title %} Homepage {% endblock %}
+{% block body %}
+          
+
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col" style="font-size:30px">ISSN</th>
+        <th scope="col" style="font-size:30px">TITLE</th>
+        <th scope="col" style="font-size:30px">PRICE</th>
+        <th scope="col" style="font-size:30px">PICTURE</th>
+        <th scope="col" style="font-size:30px">DATE</th>        
+        <th scope="col" style="font-size:30px; text-align: center;">UNITS</th> 
+        <th scope="col" style="font-size:30px; text-align: center; float: left;">ACTION</th> 
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for i in val %}
+      <tr>
+            <td style="font-size:30px">{{i[0]}}</td>
+            <td style="font-size:30px">{{i[1]}}</td>
+            <td style="font-size:30px">{{i[3]}}</td>
+            {% set testing = img_path %}
+            {% set another = "/"+testing + "/"+i[5]+ "/"   +i[4] %}
+            <div class="container">
+              <td><img src={{another}} alt="{{another}}" class="col-md-2 rounded img-fluid img-thumbnail" ></td></div>
+              <td style="font-size:30px">{{i[6]}}</td>
+
+            <div class="container">
+                 <!--<td><a href="/add_cart/{{i[0]}}"><button type="button"  class="btn btn-warning btn-lg btn btn-warning btn-lg">ADDTOCART </button> </a></td>-->
+                 <form action="/add_cart/{{i[0]}}" method="POST" enctype="multipart/form-data">
+                  <td><input type="number" class="form-control" id="inputAddress" name='COUNT' placeholder="123"></td>
+                  <td><button type="submit" class="btn btn-warning btn-lg btn btn-warning btn-lg" style="background:#0095B6">SUBMIT</button></td>
+                  <!--<td><button type="button"  class="btn btn-warning btn-lg btn btn-warning btn-lg">ADDTOCART </button> </a></td>-->
+                 </form>
+            </div>
+            <!--div class="container">
+              <td><a href="/buy/{{i[0]}}"><button type="button" class="btn btn-warning btn-lg">CLICK </button> </a></td>
+         </div>-->
+         
+      </tr>
+      {% endfor %} 
+    </tbody>
+
+</table>
+
+
+
+
+{% endblock %}
+
+
+
+

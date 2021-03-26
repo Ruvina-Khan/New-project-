@@ -1,0 +1,65 @@
+{% extends 'base3.html' %}
+{%block title%} {%endblock%}
+{%block content%}
+
+
+
+
+
+<a href="/pub_form" style="float: right;"><i class="fas fa-plus-circle fa-2x icon-align-right "> Click to Add More</i></a>
+
+<i class="fa fa-sign-out"></i>
+<a href="/pub/Periodicals" style="float: left;"> <i id="button" class="fas fa-newspaper fa-2x p-4">PERIODICALS</i></a>
+<i class="fa fa-sign-out"></i>
+<a href="/pub/Magazines" style="float: left;"> <i id="button" class="fas fa-newspaper fa-2x p-4">MAGAZINES</i></a>
+<i class="fa fa-sign-out"></i>
+<a href="/pub/Journals" style="float: left;"> <i id="button" class="fas fa-newspaper fa-2x p-4">JOURNALS</i></a>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col" style="font-size:25px">ISSN</th>
+      <th scope="col" style="font-size:25px">TITLE</th>
+      <th scope="col" style="font-size:25px">Units</th>
+      <th scope="col" style="font-size:25px">PRICE</th>
+      <th scope="col" style="font-size:25px">DATE</th>
+      <th scope="col" style="font-size:25px">PICTURE</th>
+      <th scope="col" style="font-size:25px">EDIT AND SAVE</th>
+      <th scope="col" style="font-size:25px">DELETE</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for i in data1 %}
+    <tr>
+      <td style="font-size:25px">{{i[0]}}</td>
+      <td style="font-size:25px">{{i[1]}}</td>
+      <td style="font-size:25px">{{i[2]}}</td>
+      <td style="font-size:25px">{{i[3]}}</td>
+
+      {% set testing = img_path %}
+      {% set another = "/"+testing + "/" +i[4] %}
+      <td style="font-size:30px">{{i[6]}}</td>
+      <div class="container">
+      
+        <td><img src="{{another}}" alt="{{another}}" class="col-md-2 rounded img-fluid img-thumbnail"></td>
+        <td><a href="/edit/{{i[0]}}"><button type="button" class="btn btn-outline-primary btn-lg">EDIT AND SAVE</button></a></td>
+        <td><a href="/delete/{{i[0]}}"><button type="button" class="btn btn-outline-danger btn-lg">DELETE</button></a>
+        </td>
+      </div>
+      </p>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+<!--<form action="/upload" method="POST" enctype="multipart/form-data">
+    <label class="form-label" for="customFile">Default file input example</label>
+    <input type="file" class="form-control" id="customFile" name="pic"/>
+    <button type="submit" >Upload image</button>
+  </form>-->
+
+{{msg}}
+{%endblock%}

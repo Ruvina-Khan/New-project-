@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+     
+    
+<title></title>
+  </head>
+  <body style="background:#727275">
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+  <!--<a href="/pub_home"><button class="btn btn-outline-info my-2 my-sm-0- btn-lg font-weight-bold icon-align-right"  type="submit">LET'S PUBLISH</button></a>-->
+  <a href="/pub_home" style="float: right;"><i class=" btn btn-outline-info my-2 my-sm-0- btn-lg font-weight-bold icon-align-right "> LET'S PUBLSIH</i></a>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+    <img class="w3-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIk4dB6qGaURSJj1y45avx8MmYDA0gp4z8qA&usqp=CAU" alt="Hamburger Catering" width="1200" height="600">
+    <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+      <h1 class="w3-xxlarge"style="background-color:white;">MAKE PUBLICATIONS</h1>
+    </div>
+  </header>
+  
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="data:image/jpeg;base64,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" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About</h1><br>
+      <h5 class="w3-center">Tradition since 2020</h5>
+      <p class="w3-large">Every Client on our website has a keen interest to read.Have fun while publishing your Publications.Your publication can be a great source for gathering knowlege and entertainment.Your can publish your publication swith full trust here. <span class="w3-tag w3-light-white"></span> </p>
+      <p class="w3-large w3-text-white w3-hide-medium">Please explore the website and you can publish whenever you wish. Please explore a little down to check what you can publish and enjoy publishing here</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64 " id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">OUR PUBLICATIONS</h1><br>
+      <h4>MAGAZINE</h4>
+      <p class="w3-text-white">ARTS AND CULTURE,HUMOR,FICTION AND POETRY</p><br>
+    
+      <h4>PERIODICALS</h4>
+      <p class="w3-text-white">MONTHLY , WEEKLY PERIODICALS</p><br>
+    
+      <h4>JOURNALS</h4>
+      <p class="w3-text-white">RESEARCH,BIOGRAPHY</p><br>
+    
+    
+    <div class="w3-col l6 w3-padding-large" style="max-width:2500px;min-width:1000px">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jbXf-HEWJ83Q92fAjvXKNMOv8BohJEdneg&usqp=CAU" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+  
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>FEEDBACK OR REQUIREMENT</h1><br>
+    <p>YOUR FEEDBACK ARE IMPORTANT.PLEASE TAKE A MINUTE TO SHARE IT WITH US </p>
+    <p>YOU CAN SHARE YOUR REQUIREMENTS HERE:</p>
+    <form target="_blank">
+      <p><input class="w3-input w3-padding-16" type="date" placeholder="Date" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+
+
+
+
